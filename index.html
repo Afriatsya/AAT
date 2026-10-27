@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Kenali Afriatsyah Nasra Perdana, atau Aat. Personal website berisi profil, hobi, dan kemampuan web development.">
+    <title>Aat — Personal Website</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: { accent: '#6366f1' }
+                }
+            }
+        };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: opacity .7s ease, transform .7s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .profile-ring {
+            background: linear-gradient(135deg, #a5b4fc, #6366f1, #c4b5fd);
+            padding: 4px;
+        }
+
+        .skill-bar {
+            animation: grow 1.2s ease forwards;
+            transform-origin: left;
+        }
+
+        .skill-logo {
+            font-size: 2rem;
+            line-height: 1;
+        }
+
+        @keyframes grow {
+            from { transform: scaleX(0); }
+            to { transform: scaleX(1); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800 transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+
+    <!-- Tombol tema mengambang, tanpa navbar -->
+    <button id="themeToggle"
+        type="button"
+        aria-label="Ganti tema"
+        title="Ganti tema"
+        class="fixed right-5 top-5 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-slate-700 shadow-lg backdrop-blur transition hover:scale-105 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100 dark:hover:bg-slate-800">
+
+        <svg id="themeIcon" xmlns="http://www.w3.org/2000/svg"
+            width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+        </svg>
+    </button>
+
+    <main>
+        <!-- HERO / PROFIL -->
+        <section id="home" class="relative flex min-h-screen items-center overflow-hidden px-5 pb-16 pt-28">
+
+            <div class="pointer-events-none absolute -right-32 -top-20 h-96 w-96 rounded-full bg-indigo-100/70 blur-3xl dark:bg-indigo-950/50"></div>
+            <div class="pointer-events-none absolute -bottom-24 -left-32 h-80 w-80 rounded-full bg-violet-100/70 blur-3xl dark:bg-violet-950/30"></div>
+
+            <div class="relative mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-2">
+
+                <!-- Informasi diri -->
+                <div class="reveal order-2 text-center md:order-1 md:text-left">
+
+                    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-4 py-2 text-xs font-semibold text-indigo-600 dark:border-indigo-900 dark:bg-indigo-950 dark:text-indigo-300">
+                        <span class="h-2 w-2 animate-pulse rounded-full bg-indigo-500"></span>
+                        WELCOME TO MY PERSONAL WEBSITE
+                    </div>
+
+                    <p class="mb-3 text-sm font-medium text-slate-500 dark:text-slate-400">
+                        Halo, perkenalkan saya
+                    </p>
+
+                    <h1 class="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                        Afriatsyah<br>
+                        Nasra <span class="text-indigo-500">Perdana.</span>
+                    </h1>
+
+                    <p class="mt-4 text-lg font-semibold text-slate-600 dark:text-slate-300">
+                        Panggil saja <span class="text-indigo-500">Aat</span> 👋
+                    </p>
+
+                    <p class="mx-auto mt-5 max-w-lg text-sm leading-7 text-slate-500 dark:text-slate-400 sm:text-base md:mx-0">
+                        Senang belajar hal baru, mengeksplorasi dunia teknologi,
+                        bermain badminton, dan menikmati musik.
+                        Terus berkembang, terus berkarya.
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
+                        <a href="#about" class="rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-200 transition hover:-translate-y-1 hover:bg-indigo-700 dark:shadow-none">
+                            Kenali Saya <span class="ml-1">↗</span>
+                        </a>
+                    </div>
+
+                    <div class="mt-9 flex items-center justify-center gap-3 text-xs text-slate-400 md:justify-start">
+                        <span class="h-px w-10 bg-slate-300 dark:bg-slate-700"></span>
+                        PERSONAL PROFILE
+                    </div>
+                </div>
+
+                <!-- Foto profil -->
+                <div class="reveal order-1 flex justify-center md:order-2">
+                    <div class="relative">
+
+                        <div class="absolute -inset-5 rounded-full bg-indigo-200/40 blur-2xl dark:bg-indigo-500/10"></div>
+
+                        <div class="profile-ring relative h-64 w-64 rounded-full shadow-2xl shadow-indigo-100 sm:h-80 sm:w-80 dark:shadow-none">
+
+                            <img
+                                src="assets/WhatsApp Image 2026-10-27 at 10.41.34.jpeg"
+                                alt="Foto profil Afriatsyah Nasra Perdana"
+                                class="h-full w-full rounded-full bg-slate-100 object-cover dark:bg-slate-800"
+                                onerror="this.style.display='none'; document.getElementById('photoFallback').style.display='flex';">
+
+                            <div id="photoFallback" style="display:none" class="absolute inset-1 flex flex-col items-center justify-center rounded-full bg-slate-100 text-center dark:bg-slate-800">
+                                <span class="text-6xl font-extrabold text-indigo-500">A</span>
+                                <span class="mt-2 text-xs text-slate-500">Pasang foto profilmu</span>
+                            </div>
+                        </div>
+
+                        <div class="absolute -bottom-2 -right-2 rounded-2xl border border-slate-100 bg-white px-5 py-3 shadow-xl dark:border-slate-700 dark:bg-slate-900">
+                            <p class="text-xs text-slate-400">Also known as</p>
+                            <p class="font-bold text-indigo-500">Aat ✨</p>
+                        </div>
+
+                        <div class="absolute -left-5 top-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-100 bg-white text-xl shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            💻
+                        </div>
+
+                        <div class="absolute -right-3 top-20 flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-100 bg-white text-xl shadow-lg dark:border-slate-700 dark:bg-slate-900">
+                            ✨
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TENTANG SAYA -->
+        <section id="about" class="px-5 py-24">
+            <div class="mx-auto max-w-5xl">
+
+                <div class="reveal mb-12 text-center">
+                    <p class="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500">About Me</p>
+                    <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Sedikit Tentang Saya</h2>
+                    <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Mengenal lebih dekat sosok di balik website ini.
+                    </p>
+                </div>
+
+                <div class="reveal grid gap-5 sm:grid-cols-2">
+
+                    <div class="rounded-3xl border border-slate-200 p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-100 dark:border-slate-800 dark:hover:shadow-none">
+                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-50 text-2xl dark:bg-indigo-950">👤</div>
+                        <h3 class="text-lg font-bold">Siapa Saya?</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                            Nama saya Afriatsyah Nasra Perdana, biasa dipanggil Aat.
+                            Saya memiliki ketertarikan pada dunia teknologi,
+                            khususnya pembuatan website dan pengembangan web.
+                        </p>
+                    </div>
+
+                    <div class="rounded-3xl border border-slate-200 p-7 transition hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-100 dark:border-slate-800 dark:hover:shadow-none">
+                        <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-50 text-2xl dark:bg-violet-950">🚀</div>
+                        <h3 class="text-lg font-bold">Tujuan Saya</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                            Terus belajar, meningkatkan kemampuan, mencoba hal baru,
+                            dan mengembangkan ide menjadi sesuatu yang bermanfaat
+                            melalui teknologi.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HOBI -->
+        <section id="hobi" class="bg-slate-50 px-5 py-24 dark:bg-slate-900/40">
+            <div class="mx-auto max-w-5xl">
+
+                <div class="reveal mb-12 text-center">
+                    <p class="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500">My Interests</p>
+                    <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Hal yang Saya Sukai</h2>
+                    <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
+                        Dua hal yang menemani waktu luang saya.
+                    </p>
+                </div>
+
+                <div class="grid gap-5 sm:grid-cols-2">
+
+                    <div class="reveal group rounded-3xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-green-50 text-3xl transition group-hover:scale-110 dark:bg-green-950">🏸</div>
+                        <h3 class="mt-6 text-xl font-bold">Badminton</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                            Saya suka bermain badminton untuk menikmati waktu luang,
+                            bergerak aktif, dan melatih fokus.
+                        </p>
+                    </div>
+
+                    <div class="reveal group rounded-3xl border border-slate-200 bg-white p-7 transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-slate-800 dark:bg-slate-950">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-purple-50 text-3xl transition group-hover:scale-110 dark:bg-purple-950">🎧</div>
+                        <h3 class="mt-6 text-xl font-bold">Mendengarkan Musik</h3>
+                        <p class="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                            Musik menjadi teman saat bersantai, mencari inspirasi,
+                            atau menikmati waktu sendiri.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILL -->
+        <section id="skill" class="px-5 py-24">
+            <div class="mx-auto max-w-5xl">
+
+                <div class="reveal mb-12 text-center">
+                    <p class="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500">My Skills</p>
+                    <h2 class="mt-3 text-3xl font-extrabold sm:text-4xl">Teknologi yang Saya Pelajari</h2>
+                    <p class="mx-auto mt-4 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-400">
+                        Beberapa teknologi yang saya gunakan dan pelajari
+                        dalam perjalanan web development.
+                    </p>
+                </div>
+
+                <div class="reveal grid gap-4 sm:grid-cols-2">
+
+                    <!-- HTML -->
+                    <div class="rounded-2xl border border-slate-200 p-5 dark:border-slate-800">
+                        <div class="mb-4 flex items-center gap-4">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-orange-50 dark:bg-orange-950">
+                                <i class="devicon-html5-plain colored skill-logo" aria-label="Logo HTML5" role="img"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">HTML</h3>
+                                <p class="text-xs text-slate-500">Markup Website</p>
+                            </div>
+                        </div>
+                        <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                            <div class="skill-bar h-full w-full rounded-full bg-orange-500"></div>
+                        </div>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="rounded-2xl border border-slate-200 p-5 dark:border-slate-800">
+                        <div class="mb-4 flex items-center gap-4">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 dark:bg-blue-950">
+                                <i class="devicon-css3-plain colored skill-logo" aria-label="Logo CSS3" role="img"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">CSS</h3>
+                                <p class="text-xs text-slate-500">Styling &amp; Design</p>
+                            </div>
+                        </div>
+                        <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                            <div class="skill-bar h-full w-full rounded-full bg-blue-500"></div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="rounded-2xl border border-slate-200 p-5 dark:border-slate-800">
+                        <div class="mb-4 flex items-center gap-4">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-yellow-50 dark:bg-yellow-950">
+                                <i class="devicon-javascript-plain colored skill-logo" aria-label="Logo JavaScript" role="img"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">JavaScript</h3>
+                                <p class="text-xs text-slate-500">Interaktivitas Web</p>
+                            </div>
+                        </div>
+                        <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                            <div class="skill-bar h-full w-full rounded-full bg-yellow-400"></div>
+                        </div>
+                    </div>
+
+                    <!-- Laravel -->
+                    <div class="rounded-2xl border border-slate-200 p-5 dark:border-slate-800">
+                        <div class="mb-4 flex items-center gap-4">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 dark:bg-red-950">
+                                <i class="devicon-laravel-plain colored skill-logo" aria-label="Logo Laravel" role="img"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold">Laravel</h3>
+                                <p class="text-xs text-slate-500">Web Framework</p>
+                            </div>
+                        </div>
+                        <div class="h-2 overflow-hidden rounded-full bg-slate-100 dark:bg-slate-800">
+                            <div class="skill-bar h-full w-full rounded-full bg-red-500"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="mt-5 text-center text-xs text-slate-400">
+                    Teknologi yang sedang saya pelajari
+                </p>
+            </div>
+        </section>
+
+        <!-- PENUTUP, TANPA FOOTER -->
+        <section class="px-5 py-24">
+            <div class="reveal mx-auto max-w-3xl text-center">
+                <p class="text-sm font-bold uppercase tracking-[0.25em] text-indigo-500">Thanks for Visiting</p>
+
+                <h2 class="mt-4 text-3xl font-extrabold leading-tight sm:text-5xl">
+                    Senang Bisa <span class="text-indigo-500">Berkenalan!</span>
+                </h2>
+
+                <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-500 dark:text-slate-400">
+                    Terima kasih sudah mengunjungi website pribadi saya.
+                    Semoga kita bisa saling mengenal dan berbagi hal positif.
+                </p>
+
+                <a href="#home" class="mt-8 inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-1 hover:bg-indigo-700">
+                    Kembali ke Atas ↑
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mode gelap dan terang
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        function setTheme(isDark) {
+            document.documentElement.classList.toggle('dark', isDark);
+
+            themeIcon.innerHTML = isDark
+                ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>'
+                : '<path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6.5 6.5 0 0 0 8.268 8.268c.344-.215.825-.003.803.401"/>';
+
+            themeToggle.setAttribute(
+                'aria-label',
+                isDark ? 'Aktifkan mode terang' : 'Aktifkan mode gelap'
+            );
+
+            document.querySelector('meta[name="theme-color"]')
+                .setAttribute('content', isDark ? '#020617' : '#ffffff');
+        }
+
+        let savedTheme = null;
+
+        try {
+            savedTheme = localStorage.getItem('aat-theme');
+        } catch (error) {
+            // Website tetap berjalan jika penyimpanan tidak tersedia.
+        }
+
+        const prefersDark = window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        setTheme(savedTheme ? savedTheme === 'dark' : prefersDark);
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = !document.documentElement.classList.contains('dark');
+            setTheme(isDark);
+
+            try {
+                localStorage.setItem('aat-theme', isDark ? 'dark' : 'light');
+            } catch (error) {
+                // Tema tetap berubah meskipun tidak tersimpan.
+            }
+        });
+
+        // Animasi ketika bagian masuk ke layar
+        const revealElements = document.querySelectorAll('.reveal');
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+
+            revealElements.forEach(element => observer.observe(element));
+        } else {
+            revealElements.forEach(element => element.classList.add('show'));
+        }
+    </script>
+
+</body>
+</html>
